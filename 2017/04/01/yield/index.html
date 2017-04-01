@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="generator函数定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;">
+<meta name="description" content="定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;#125;gen()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="generator yield 遍历器对的next方法">
+<meta property="og:title" content="generator yield语句和next()方法">
 <meta property="og:url" content="http://yoursite.com/2017/04/01/yield/index.html">
 <meta property="og:site_name" content="有趣的前端分享博客">
-<meta property="og:description" content="generator函数定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;">
-<meta property="og:updated_time" content="2017-04-01T05:32:25.000Z">
+<meta property="og:description" content="定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;#125;gen()">
+<meta property="og:updated_time" content="2017-04-01T07:34:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="generator yield 遍历器对的next方法">
-<meta name="twitter:description" content="generator函数定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;">
+<meta name="twitter:title" content="generator yield语句和next()方法">
+<meta name="twitter:description" content="定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;#125;gen()">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title> generator yield 遍历器对的next方法 | 有趣的前端分享博客 </title>
+  <title> generator yield语句和next()方法 | 有趣的前端分享博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +280,7 @@
             
             
               
-                generator yield 遍历器对的next方法
+                generator yield语句和next()方法
               
             
           </h1>
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2017/04/01/yield/" class="leancloud_visitors" data-flag-title="generator yield 遍历器对的next方法">
+             <span id="/2017/04/01/yield/" class="leancloud_visitors" data-flag-title="generator yield语句和next()方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,12 +374,13 @@
       
 
       
-        <h3 id="generator函数"><a href="#generator函数" class="headerlink" title="generator函数"></a>generator函数</h3><h5 id="定义一个generator函数"><a href="#定义一个generator函数" class="headerlink" title="定义一个generator函数"></a>定义一个generator函数</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>* <span class="function"><span class="title">gen</span></span>()&#123;</div><div class="line">	yield <span class="string">'a'</span></div><div class="line">	yield <span class="string">'b'</span></div><div class="line">&#125;</div><div class="line">gen() // 返回一个遍历器对象，它有一个next();</div><div class="line">gen().next() //&#123;value:<span class="string">'a'</span>,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">gen().next() //&#123;value:<span class="string">'b'</span>,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">gen().next() //&#123;value:<span class="string">'undefined'</span>,<span class="keyword">done</span>:<span class="literal">true</span>&#125;</div></pre></td></tr></table></figure>
+        <!-- ### generator函数 -->
+<h4 id="定义一个generator函数"><a href="#定义一个generator函数" class="headerlink" title="定义一个generator函数"></a>定义一个generator函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>* <span class="function"><span class="title">gen</span></span>()&#123;</div><div class="line">	yield <span class="string">'a'</span></div><div class="line">	yield <span class="string">'b'</span></div><div class="line">&#125;</div><div class="line">gen() // 返回一个遍历器对象，它有一个next();</div><div class="line">gen().next() //&#123;value:<span class="string">'a'</span>,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">gen().next() //&#123;value:<span class="string">'b'</span>,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">gen().next() //&#123;value:<span class="string">'undefined'</span>,<span class="keyword">done</span>:<span class="literal">true</span>&#125;</div></pre></td></tr></table></figure>
 <p>在关键字function之后跟一个＊号，内部使用yield定义执行状态，这样就是一个generator函数。<br>调用gen()，函数并不和普通函数一样执行，而是返回了一个对象，叫做遍历器对象，同时它有一个next()方法。<br>调用next()，函数从开始执行，遇到yield暂停，返回{value:’’,done:’’}对象，value的值就是yield后面表达式的值，done的值为Boolen类型，表示遍历是否结束。</p>
-<h5 id="yield语句返回值"><a href="#yield语句返回值" class="headerlink" title="yield语句返回值"></a>yield语句返回值</h5><p>yield语句本身没有返回值，或者说返回值是undefined。</p>
+<h4 id="yield语句返回值"><a href="#yield语句返回值" class="headerlink" title="yield语句返回值"></a>yield语句返回值</h4><p>yield语句本身没有返回值，或者说返回值是undefined。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>* foo(x) &#123;</div><div class="line">  var y = 2 * (yield (x + 1));</div><div class="line">  var z = yield (y / 3);</div><div class="line">  <span class="built_in">return</span> (x + y + z);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var a = foo(5);</div><div class="line">a.next() // Object&#123;value:6, <span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">a.next() // Object&#123;value:NaN, <span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">a.next() // Object&#123;value:NaN, <span class="keyword">done</span>:<span class="literal">true</span>&#125;</div><div class="line"></div><div class="line">var b = foo(5);</div><div class="line">b.next() // &#123; value:6, <span class="keyword">done</span>:<span class="literal">false</span> &#125;</div><div class="line">b.next(12) // &#123; value:8, <span class="keyword">done</span>:<span class="literal">false</span> &#125;</div><div class="line">b.next(13) // &#123; value:42, <span class="keyword">done</span>:<span class="literal">true</span> &#125;</div></pre></td></tr></table></figure>
-<h6 id="注意-yield语句没有返回值"><a href="#注意-yield语句没有返回值" class="headerlink" title="注意 yield语句没有返回值"></a>注意 yield语句没有返回值</h6><p>a.next()执行的是yield那一句代码，返回的<code>{value:&#39;&#39;,done:&#39;&#39;}</code>是next()的返回值，而不是yield语句的返回值。yield语句自己不执行，所以理论上也不可能有返回值，所以取它的返回值是undefined。</p>
-<h6 id="注意-next-方法传参可以被它指向的yield的上一个yield返回值接收"><a href="#注意-next-方法传参可以被它指向的yield的上一个yield返回值接收" class="headerlink" title="注意 next()方法传参可以被它指向的yield的上一个yield返回值接收"></a>注意 next()方法传参可以被它指向的yield的上一个yield返回值接收</h6><p>上面代码，第一次调用a.next()返回<code>{value:6, done:false}</code>,第二次调用a.next()由于没有传参，所以第一个yield语句返回值是 <code>undefined</code> ,2*undefined为NaN,即y为NaN；NaN/3同样NaN，所以第二次调用a.next() 时value为NaN；第三次a.next()没有传参，z为undefined，而value的值为return 后面表达式的值，这时x是5，y是NaN，z也是undefined，所以x+y+z为NaN。</p>
+<h5 id="注意-yield语句没有返回值"><a href="#注意-yield语句没有返回值" class="headerlink" title="注意 yield语句没有返回值"></a>注意 yield语句没有返回值</h5><p>a.next()执行的是yield那一句代码，返回的<code>{value:&#39;&#39;,done:&#39;&#39;}</code>是next()的返回值，而不是yield语句的返回值。yield语句自己不执行，所以理论上也不可能有返回值，所以取它的返回值是undefined。</p>
+<h5 id="注意-next-方法传参可以被它指向的yield的上一个yield返回值接收"><a href="#注意-next-方法传参可以被它指向的yield的上一个yield返回值接收" class="headerlink" title="注意 next()方法传参可以被它指向的yield的上一个yield返回值接收"></a>注意 next()方法传参可以被它指向的yield的上一个yield返回值接收</h5><p>上面代码，第一次调用a.next()返回<code>{value:6, done:false}</code>,第二次调用a.next()由于没有传参，所以第一个yield语句返回值是 <code>undefined</code> ,2*undefined为NaN,即y为NaN；NaN/3同样NaN，所以第二次调用a.next() 时value为NaN；第三次a.next()没有传参，z为undefined，而value的值为return 后面表达式的值，这时x是5，y是NaN，z也是undefined，所以x+y+z为NaN。</p>
 <p>第一次b.next()返回{ value:6, done:false }，第二次b.next()传入参数12，所以y＝2*12为24，value值为24/3为8，第三次b.next(),传入参数13，即z为13，这时x是5，y是24，z是13，所以value是42.</p>
 
       
@@ -442,6 +443,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/01/async/" rel="prev" title="async函数">
+                async函数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -515,7 +520,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -577,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#generator函数"><span class="nav-number">1.</span> <span class="nav-text">generator函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义一个generator函数"><span class="nav-number">1.0.1.</span> <span class="nav-text">定义一个generator函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#yield语句返回值"><span class="nav-number">1.0.2.</span> <span class="nav-text">yield语句返回值</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#注意-yield语句没有返回值"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">注意 yield语句没有返回值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#注意-next-方法传参可以被它指向的yield的上一个yield返回值接收"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">注意 next()方法传参可以被它指向的yield的上一个yield返回值接收</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义一个generator函数"><span class="nav-number">1.</span> <span class="nav-text">定义一个generator函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield语句返回值"><span class="nav-number">2.</span> <span class="nav-text">yield语句返回值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意-yield语句没有返回值"><span class="nav-number">2.1.</span> <span class="nav-text">注意 yield语句没有返回值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意-next-方法传参可以被它指向的yield的上一个yield返回值接收"><span class="nav-number">2.2.</span> <span class="nav-text">注意 next()方法传参可以被它指向的yield的上一个yield返回值接收</span></a></li></ol></li></ol></div>
             
 
           </div>
