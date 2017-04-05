@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/01/es6-yield/index.html">
 <meta property="og:site_name" content="有趣的前端技术博客">
 <meta property="og:description" content="定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;#125;gen()">
-<meta property="og:updated_time" content="2017-04-01T07:34:35.000Z">
+<meta property="og:updated_time" content="2017-04-05T09:29:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="generator yield语句和next()方法">
 <meta name="twitter:description" content="定义一个generator函数12345678function* gen()&amp;#123;	yield &apos;a&apos;	yield &apos;b&apos;&amp;#125;gen() // 返回一个遍历器对象，它有一个next();gen().next() //&amp;#123;value:&apos;a&apos;,done:false&amp;#125;gen().next() //&amp;#123;value:&apos;b&apos;,done:false&amp;#125;gen()">
@@ -104,8 +104,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -376,7 +376,7 @@
       
         <!-- ### generator函数 -->
 <h4 id="定义一个generator函数"><a href="#定义一个generator函数" class="headerlink" title="定义一个generator函数"></a>定义一个generator函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>* <span class="function"><span class="title">gen</span></span>()&#123;</div><div class="line">	yield <span class="string">'a'</span></div><div class="line">	yield <span class="string">'b'</span></div><div class="line">&#125;</div><div class="line">gen() // 返回一个遍历器对象，它有一个next();</div><div class="line">gen().next() //&#123;value:<span class="string">'a'</span>,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">gen().next() //&#123;value:<span class="string">'b'</span>,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">gen().next() //&#123;value:<span class="string">'undefined'</span>,<span class="keyword">done</span>:<span class="literal">true</span>&#125;</div></pre></td></tr></table></figure>
-<p>在关键字function之后跟一个＊号，内部使用yield定义执行状态，这样就是一个generator函数。<br>调用gen()，函数并不和普通函数一样执行，而是返回了一个对象，叫做遍历器对象，同时它有一个next()方法。<br>调用next()，函数从开始执行，遇到yield暂停，返回{value:’’,done:’’}对象，value的值就是yield后面表达式的值，done的值为Boolen类型，表示遍历是否结束。</p>
+<p>在关键字function之后跟一个＊号，内部使用yield定义执行状态，这样就是一个generator函数。<br>调用gen()，函数并不和普通函数一样执行，而是返回了一个对象，叫做遍历器对象，同时它有一个next()方法。<br>调用next()，函数从开始执行，遇到yield暂停，返回{value:’’,done:’’}对象，value的值就是yield后面表达式的值，done的值为Boolen类型，表示遍历是否结束。<a id="more"></a></p>
 <h4 id="yield语句返回值"><a href="#yield语句返回值" class="headerlink" title="yield语句返回值"></a>yield语句返回值</h4><p>yield语句本身没有返回值，或者说返回值是undefined。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>* foo(x) &#123;</div><div class="line">  var y = 2 * (yield (x + 1));</div><div class="line">  var z = yield (y / 3);</div><div class="line">  <span class="built_in">return</span> (x + y + z);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var a = foo(5);</div><div class="line">a.next() // Object&#123;value:6, <span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">a.next() // Object&#123;value:NaN, <span class="keyword">done</span>:<span class="literal">false</span>&#125;</div><div class="line">a.next() // Object&#123;value:NaN, <span class="keyword">done</span>:<span class="literal">true</span>&#125;</div><div class="line"></div><div class="line">var b = foo(5);</div><div class="line">b.next() // &#123; value:6, <span class="keyword">done</span>:<span class="literal">false</span> &#125;</div><div class="line">b.next(12) // &#123; value:8, <span class="keyword">done</span>:<span class="literal">false</span> &#125;</div><div class="line">b.next(13) // &#123; value:42, <span class="keyword">done</span>:<span class="literal">true</span> &#125;</div></pre></td></tr></table></figure>
 <h5 id="注意-yield语句没有返回值"><a href="#注意-yield语句没有返回值" class="headerlink" title="注意 yield语句没有返回值"></a>注意 yield语句没有返回值</h5><p>a.next()执行的是yield那一句代码，返回的<code>{value:&#39;&#39;,done:&#39;&#39;}</code>是next()的返回值，而不是yield语句的返回值。yield语句自己不执行，所以理论上也不可能有返回值，所以取它的返回值是undefined。</p>

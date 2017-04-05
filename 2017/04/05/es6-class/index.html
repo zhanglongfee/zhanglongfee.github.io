@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,19 +87,16 @@
 
 
 
-<meta name="description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象
-12345678910111213141516171819202122//传统方式function Ani(name,age)&amp;#123;	this.name=name;	this.age=age;&amp;#125;Ani.prototype.info=function()&amp;#123;	console.log(">
+<meta name="description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="class 类">
+<meta property="og:title" content="es6 class 类">
 <meta property="og:url" content="http://yoursite.com/2017/04/05/es6-class/index.html">
 <meta property="og:site_name" content="有趣的前端技术博客">
-<meta property="og:description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象
-12345678910111213141516171819202122//传统方式function Ani(name,age)&amp;#123;	this.name=name;	this.age=age;&amp;#125;Ani.prototype.info=function()&amp;#123;	console.log(">
-<meta property="og:updated_time" content="2017-04-05T08:24:07.000Z">
+<meta property="og:description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象">
+<meta property="og:updated_time" content="2017-04-05T09:30:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class 类">
-<meta name="twitter:description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象
-12345678910111213141516171819202122//传统方式function Ani(name,age)&amp;#123;	this.name=name;	this.age=age;&amp;#125;Ani.prototype.info=function()&amp;#123;	console.log(">
+<meta name="twitter:title" content="es6 class 类">
+<meta name="twitter:description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象">
 
 
 
@@ -107,8 +104,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -133,7 +130,7 @@
 
 
 
-  <title> class 类 | 有趣的前端技术博客 </title>
+  <title> es6 class 类 | 有趣的前端技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +280,7 @@
             
             
               
-                class 类
+                es6 class 类
               
             
           </h1>
@@ -348,7 +345,7 @@
 
           
           
-             <span id="/2017/04/05/es6-class/" class="leancloud_visitors" data-flag-title="class 类">
+             <span id="/2017/04/05/es6-class/" class="leancloud_visitors" data-flag-title="es6 class 类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,7 +374,7 @@
       
 
       
-        <p>以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象</p>
+        <p>以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象<a id="more"></a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//传统方式</div><div class="line"><span class="keyword">function</span> Ani(name,age)&#123;</div><div class="line">	this.name=name;</div><div class="line">	this.age=age;</div><div class="line">&#125;</div><div class="line">Ani.prototype.info=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	console.log(this.name+<span class="string">';'</span>+this.age)</div><div class="line">&#125;</div><div class="line">var ani=new Ani(<span class="string">'ali'</span>,2)</div><div class="line">ani.info() // ali;2</div><div class="line"></div><div class="line">// class 方式</div><div class="line">class <span class="function"><span class="title">Ani</span></span>()&#123;</div><div class="line">	construnctor(name,age)&#123;</div><div class="line">		this.name=name;</div><div class="line">		this.age=age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="title">info</span></span>()&#123;</div><div class="line">		console.log(this.name+<span class="string">';'</span>+this.age)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>＊用于定义类的方法不需要关键字function，可以直接写方法名</p>
 <p>＊所有class定义的类内部会有一个construnctor构造方法，相当于传统方法定义的构造函数；用来构造对象并返回；如果没有显示的定义，内部会自动隐式生成一个空的construnctor(){}</p>

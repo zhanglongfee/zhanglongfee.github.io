@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="文件目录管理1234567891011121314151617181920212223ls: 列出目录cd：切换目录pwd：显示目前的目录mkdir：创建一个新的目录rmdir：删除一个空的目录cp: 复制文件或目录rm: 移除文件或目录rm -r: 强制删除文件或递归删除一个目录cat: 查看文件内容touch a.js: 新建一个a.js文件mv a.txt b.txt:文件a.txt重名名b">
+<meta name="description" content="文件目录管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单的shell命令，装x使用">
 <meta property="og:url" content="http://yoursite.com/2017/03/30/shell-command/index.html">
 <meta property="og:site_name" content="有趣的前端技术博客">
-<meta property="og:description" content="文件目录管理1234567891011121314151617181920212223ls: 列出目录cd：切换目录pwd：显示目前的目录mkdir：创建一个新的目录rmdir：删除一个空的目录cp: 复制文件或目录rm: 移除文件或目录rm -r: 强制删除文件或递归删除一个目录cat: 查看文件内容touch a.js: 新建一个a.js文件mv a.txt b.txt:文件a.txt重名名b">
-<meta property="og:updated_time" content="2017-04-03T11:55:16.000Z">
+<meta property="og:description" content="文件目录管理">
+<meta property="og:updated_time" content="2017-04-05T09:28:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单的shell命令，装x使用">
-<meta name="twitter:description" content="文件目录管理1234567891011121314151617181920212223ls: 列出目录cd：切换目录pwd：显示目前的目录mkdir：创建一个新的目录rmdir：删除一个空的目录cp: 复制文件或目录rm: 移除文件或目录rm -r: 强制删除文件或递归删除一个目录cat: 查看文件内容touch a.js: 新建一个a.js文件mv a.txt b.txt:文件a.txt重名名b">
+<meta name="twitter:description" content="文件目录管理">
 
 
 
@@ -104,8 +104,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -374,7 +374,8 @@
       
 
       
-        <h4 id="文件目录管理"><a href="#文件目录管理" class="headerlink" title="文件目录管理"></a>文件目录管理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">ls: 列出目录</div><div class="line"></div><div class="line"><span class="built_in">cd</span>：切换目录</div><div class="line"></div><div class="line"><span class="built_in">pwd</span>：显示目前的目录</div><div class="line"></div><div class="line">mkdir：创建一个新的目录</div><div class="line"></div><div class="line">rmdir：删除一个空的目录</div><div class="line"></div><div class="line">cp: 复制文件或目录</div><div class="line"></div><div class="line">rm: 移除文件或目录</div><div class="line"></div><div class="line">rm -r: 强制删除文件或递归删除一个目录</div><div class="line"></div><div class="line">cat: 查看文件内容</div><div class="line"></div><div class="line">touch a.js: 新建一个a.js文件</div><div class="line"></div><div class="line">mv a.txt b.txt:文件a.txt重名名b.txt</div><div class="line"></div><div class="line">mv a.txt &lt;path&gt; : 把文件a移动到一个目录下，&lt;path&gt;是要移动的目录路径</div></pre></td></tr></table></figure>
+        <h4 id="文件目录管理"><a href="#文件目录管理" class="headerlink" title="文件目录管理"></a>文件目录管理</h4><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">ls: 列出目录</div><div class="line"></div><div class="line"><span class="built_in">cd</span>：切换目录</div><div class="line"></div><div class="line"><span class="built_in">pwd</span>：显示目前的目录</div><div class="line"></div><div class="line">mkdir：创建一个新的目录</div><div class="line"></div><div class="line">rmdir：删除一个空的目录</div><div class="line"></div><div class="line">cp: 复制文件或目录</div><div class="line"></div><div class="line">rm: 移除文件或目录</div><div class="line"></div><div class="line">rm -r: 强制删除文件或递归删除一个目录</div><div class="line"></div><div class="line">cat: 查看文件内容</div><div class="line"></div><div class="line">touch a.js: 新建一个a.js文件</div><div class="line"></div><div class="line">mv a.txt b.txt:文件a.txt重名名b.txt</div><div class="line"></div><div class="line">mv a.txt &lt;path&gt; : 把文件a移动到一个目录下，&lt;path&gt;是要移动的目录路径</div></pre></td></tr></table></figure>
 <h4 id="vi-vim-编辑器"><a href="#vi-vim-编辑器" class="headerlink" title="vi vim 编辑器"></a>vi vim 编辑器</h4><p>vim 可以看作是vi的升级版，兼容所有的vi命令，vim显示代码高亮，所以可以编辑查看代码文件，vi只适合纯文本编辑</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi/vim &lt;文件路径&gt;</div></pre></td></tr></table></figure>
 <p>这时候，打开的是一个命令模式，不能进行编辑</p>
