@@ -260,6 +260,173 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/es6-class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhl">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有趣的前端技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/05/es6-class/" itemprop="url">
+                  class 类
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T11:24:13+08:00">
+                2017-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/05/es6-class/" class="leancloud_visitors" data-flag-title="class 类">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//传统方式</div><div class="line"><span class="keyword">function</span> Ani(name,age)&#123;</div><div class="line">	this.name=name;</div><div class="line">	this.age=age;</div><div class="line">&#125;</div><div class="line">Ani.prototype.info=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	console.log(this.name+<span class="string">';'</span>+this.age)</div><div class="line">&#125;</div><div class="line">var ani=new Ani(<span class="string">'ali'</span>,2)</div><div class="line">ani.info() // ali;2</div><div class="line"></div><div class="line">// class 方式</div><div class="line">class <span class="function"><span class="title">Ani</span></span>()&#123;</div><div class="line">	construnctor(name,age)&#123;</div><div class="line">		this.name=name;</div><div class="line">		this.age=age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="title">info</span></span>()&#123;</div><div class="line">		console.log(this.name+<span class="string">';'</span>+this.age)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>＊用于定义类的方法不需要关键字function，可以直接写方法名</p>
+<p>＊所有class定义的类内部会有一个construnctor构造方法，相当于传统方法定义的构造函数；用来构造对象并返回；如果没有显示的定义，内部会自动隐式生成一个空的construnctor(){}</p>
+<p>＊内部定义的所有方法其实都是定义到了类 Ani的prototype属性,所以可以使用Object.assign()给类添加方法,如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Ani &#123;</div><div class="line">  <span class="function"><span class="title">constructor</span></span>()&#123;</div><div class="line">    // ...</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Object.assign(Ani.prototype, &#123;</div><div class="line">  <span class="function"><span class="title">info</span></span>()&#123;&#125;,</div><div class="line">  <span class="function"><span class="title">toValue</span></span>()&#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="class-继承"><a href="#class-继承" class="headerlink" title="class 继承"></a>class 继承</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">//父类</div><div class="line">class Point &#123;</div><div class="line">	construnctor(x,y)&#123;</div><div class="line">		this.x = x;</div><div class="line">		this.y = y;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="title">toString</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">'('</span>+this.x + <span class="string">','</span>+this.y+<span class="string">')'</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//子类</div><div class="line">class ColorPoint extends Point &#123;</div><div class="line">  constructor(color,...agrs) &#123;</div><div class="line">    super(...agrs); // 调用父类的constructor(x, y)</div><div class="line">    this.color = color;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="title">toString</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> this.color + <span class="string">' '</span> + super.toString(); // 调用父类的toString()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var colorp=new ColorPoint(<span class="string">'red'</span>,1,2)</div></pre></td></tr></table></figure>
+<p>＊ class痛过关键字extends实现继承父类所有的属性 方法</p>
+<p>＊ 子类的<code>construnctor</code> 方法中必须调用<code>super</code>,<code>super</code>表示的是父类的构造函数。这是因为子类没有自己的this对象，它的this对象是继承父类的this对象，然后用自己的构造函数来加工</p>
+<p>＊ <code>super</code>表示的是父类的构造函数,所以也是父类本身，所以可以调用它prototype的方法：super.toString()</p>
+<h4 id="class的继承机制"><a href="#class的继承机制" class="headerlink" title="class的继承机制"></a>class的继承机制</h4><p>es5中通过原型链__proto__实现继承，而es6 class的继承是咋样的呢？</p>
+<p>class作为构造函数的语法糖，它同时拥有prototype和__proto__两个属性，因此它有两条继承链</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class A &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class B extends A &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.\_\_proto\_\_ === A // <span class="literal">true</span></div><div class="line">B.prototype.\_\_proto\_\_ === A.prototype // <span class="literal">true</span></div></pre></td></tr></table></figure>
+<p>＊ 子类B作为对象它拥有__proto__属性，指向它的构造函数，由于它是继承自A，所以它指向A的构造函数，也就是A 本身</p>
+<p>＊子类B作为构造函数，它的prototype的__proto__指向了父类的prototype，从而来继承父类的方法，因为class的方法全部来自它的prototype对象。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/es6-rest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -371,15 +538,13 @@
         
           
             <h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><p>es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作</p>
-<p>多变量赋值 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 传统</div><div class="line">var a = 1,</div><div class="line">	b = 2,</div><div class="line">	c = 3</div><div class="line"></div><div class="line">//es6</div><div class="line">var [a,b,c] = [1,2,3]</div></pre></td></tr></table></figure></p>
-<p>数组解构 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [&apos;string&apos;,&apos;number&apos;,&apos;boolean&apos;];</div><div class="line"></div><div class="line">var [str,num,bool] = arr;</div><div class="line"></div><div class="line">console.log(str) //string</div><div class="line">console.log(num) //number</div><div class="line">console.log(bool) //boolean</div></pre></td></tr></table></figure></p>
-<p>对象解构 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">	name: &apos;chris&apos;,</div><div class="line">	sex: &apos;male&apos;,</div><div class="line">	age: 26,</div><div class="line">	son: &#123;</div><div class="line">		sonname: &apos;大熊&apos;,</div><div class="line">		sonsex: &apos;male&apos;,</div><div class="line">		sonage: 1</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">var &#123;name, sex, age, son&#125; = obj;</div><div class="line">console.log(name + &apos; &apos; + sex + &apos; &apos; + age); //chris male 26</div><div class="line">console.log(son); // &#123; sonname: &apos;大熊&apos;, sonsex: &apos;male&apos;, sonage: 1 &#125;</div></pre></td></tr></table></figure></p>
-<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><p>扩展运算符用三个点号表示，功能是把数组或类数组对象展开成一系列用逗号隔开的值，一般可用于函数的调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var foo = function(a, b, c) &#123;</div><div class="line">	console.log(a);</div><div class="line">	console.log(b);</div><div class="line">	console.log(c);</div><div class="line">&#125;</div><div class="line">var arr = [1, 2, 3];</div><div class="line">//传统写法</div><div class="line">foo(arr[0], arr[1], arr[2]);</div><div class="line"></div><div class="line">//使用扩展运算符</div><div class="line">foo(...arr);</div><div class="line">//1</div><div class="line">//2</div><div class="line">//3</div></pre></td></tr></table></figure>
+<p>多变量赋值 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 传统</div><div class="line">var a = 1,</div><div class="line">	b = 2,</div><div class="line">	c = 3</div><div class="line"></div><div class="line">//es6</div><div class="line">var [a,b,c] = [1,2,3]</div></pre></td></tr></table></figure></p>
+<p>数组解构 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [<span class="string">'string'</span>,<span class="string">'number'</span>,<span class="string">'boolean'</span>];</div><div class="line"></div><div class="line">var [str,num,bool] = arr;</div><div class="line"></div><div class="line">console.log(str) //string</div><div class="line">console.log(num) //number</div><div class="line">console.log(bool) //boolean</div></pre></td></tr></table></figure></p>
+<p>对象解构 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">	name: <span class="string">'chris'</span>,</div><div class="line">	sex: <span class="string">'male'</span>,</div><div class="line">	age: 26,</div><div class="line">	son: &#123;</div><div class="line">		sonname: <span class="string">'大熊'</span>,</div><div class="line">		sonsex: <span class="string">'male'</span>,</div><div class="line">		sonage: 1</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">var &#123;name, sex, age, son&#125; = obj;</div><div class="line">console.log(name + <span class="string">' '</span> + sex + <span class="string">' '</span> + age); //chris male 26</div><div class="line">console.log(son); // &#123; sonname: <span class="string">'大熊'</span>, sonsex: <span class="string">'male'</span>, sonage: 1 &#125;</div></pre></td></tr></table></figure></p>
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><p>扩展运算符用三个点号表示，功能是把数组或类数组对象展开成一系列用逗号隔开的值，一般可用于函数的调用传参</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var foo = <span class="keyword">function</span>(a, b, c) &#123;</div><div class="line">	console.log(a);</div><div class="line">	console.log(b);</div><div class="line">	console.log(c);</div><div class="line">&#125;</div><div class="line">var arr = [1, 2, 3];</div><div class="line">//传统写法</div><div class="line">foo(arr[0], arr[1], arr[2]);</div><div class="line"></div><div class="line">//使用扩展运算符</div><div class="line">foo(...arr);</div><div class="line">//1</div><div class="line">//2</div><div class="line">//3</div></pre></td></tr></table></figure>
 <h4 id="rest运算符"><a href="#rest运算符" class="headerlink" title="rest运算符"></a>rest运算符</h4><p>rest运算符也是三个点号，功能与扩展运算符恰好相反，用于把逗号隔开的值序列组合成一个数组，一般用于函数的形参</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//rest用于参数接收</div><div class="line"></div><div class="line">bar = function(a, ...args) &#123;</div><div class="line">	console.log(a);</div><div class="line">	console.log(args);</div><div class="line">&#125;</div><div class="line">bar(1, 2, 3, 4);</div><div class="line">//1</div><div class="line">//[ 2, 3, 4 ]</div></pre></td></tr></table></figure>
-<p>rest运算符配合解构 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var [a, ...rest] = [1, 2, 3, 4];</div><div class="line">console.log(a);//1</div><div class="line">console.log(rest);//[2, 3, 4]</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//rest用于参数接收</div><div class="line"></div><div class="line">bar = <span class="keyword">function</span>(a, ...args) &#123;</div><div class="line">	console.log(a);</div><div class="line">	console.log(args);</div><div class="line">&#125;</div><div class="line">bar(1, 2, 3, 4);</div><div class="line">//1</div><div class="line">//[ 2, 3, 4 ]</div><div class="line"></div><div class="line">``` </div><div class="line">rest运算符配合解构 :</div><div class="line"></div><div class="line">``` bash</div><div class="line">var [a, ...rest] = [1, 2, 3, 4];</div><div class="line">console.log(a);//1</div><div class="line">console.log(rest);//[2, 3, 4]</div></pre></td></tr></table></figure>
 
           
         
@@ -1102,7 +1267,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
