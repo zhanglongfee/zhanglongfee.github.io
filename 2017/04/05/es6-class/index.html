@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="有趣的前端技术博客">
 <meta property="og:description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象
 12345678910111213141516171819202122//传统方式function Ani(name,age)&amp;#123;	this.name=name;	this.age=age;&amp;#125;Ani.prototype.info=function()&amp;#123;	console.log(">
-<meta property="og:updated_time" content="2017-04-05T08:10:42.000Z">
+<meta property="og:updated_time" content="2017-04-05T08:24:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="class 类">
 <meta name="twitter:description" content="以前js使用构造函数的方式定义生成一个对象，而在es6中引入了class 类的概念来生成对象
@@ -388,7 +388,7 @@
 <p>＊ <code>super</code>表示的是父类的构造函数,所以也是父类本身，所以可以调用它prototype的方法：super.toString()</p>
 <h4 id="class的继承机制"><a href="#class的继承机制" class="headerlink" title="class的继承机制"></a>class的继承机制</h4><p>es5中通过原型链__proto__实现继承，而es6 class的继承是咋样的呢？</p>
 <p>class作为构造函数的语法糖，它同时拥有prototype和__proto__两个属性，因此它有两条继承链</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class A &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class B extends A &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.\_\_proto\_\_ === A // <span class="literal">true</span></div><div class="line">B.prototype.\_\_proto\_\_ === A.prototype // <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class A &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class B extends A &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.__proto__ === A // <span class="literal">true</span></div><div class="line">B.prototype.__proto__ === A.prototype // <span class="literal">true</span></div></pre></td></tr></table></figure>
 <p>＊ 子类B作为对象它拥有__proto__属性，指向它的构造函数，由于它是继承自A，所以它指向A的构造函数，也就是A 本身</p>
 <p>＊子类B作为构造函数，它的prototype的__proto__指向了父类的prototype，从而来继承父类的方法，因为class的方法全部来自它的prototype对象。</p>
 
