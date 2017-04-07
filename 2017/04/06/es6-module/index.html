@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="文件目录管理">
+<meta name="description" content="任何一个应用的开发，代码模块化的概念都是应该注意的问题，对于这个概念，不同的语言都有自己的实现，然而javascript以前的历史一直没有提供这样的标准，所以社区制定了一些加载方案，比如">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单的shell命令，装x使用">
-<meta property="og:url" content="http://yoursite.com/2017/03/30/shell-command/index.html">
+<meta property="og:title" content="es6 module 模块系统">
+<meta property="og:url" content="http://yoursite.com/2017/04/06/es6-module/index.html">
 <meta property="og:site_name" content="有趣的前端技术博客">
-<meta property="og:description" content="文件目录管理">
-<meta property="og:updated_time" content="2017-04-05T09:28:21.000Z">
+<meta property="og:description" content="任何一个应用的开发，代码模块化的概念都是应该注意的问题，对于这个概念，不同的语言都有自己的实现，然而javascript以前的历史一直没有提供这样的标准，所以社区制定了一些加载方案，比如">
+<meta property="og:updated_time" content="2017-04-07T02:30:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单的shell命令，装x使用">
-<meta name="twitter:description" content="文件目录管理">
+<meta name="twitter:title" content="es6 module 模块系统">
+<meta name="twitter:description" content="任何一个应用的开发，代码模块化的概念都是应该注意的问题，对于这个概念，不同的语言都有自己的实现，然而javascript以前的历史一直没有提供这样的标准，所以社区制定了一些加载方案，比如">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/30/shell-command/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/06/es6-module/"/>
 
 
 
 
 
-  <title> 简单的shell命令，装x使用 | 有趣的前端技术博客 </title>
+  <title> es6 module 模块系统 | 有趣的前端技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/shell-command/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/06/es6-module/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhl">
@@ -280,7 +280,7 @@
             
             
               
-                简单的shell命令，装x使用
+                es6 module 模块系统
               
             
           </h1>
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T22:39:29+08:00">
-                2017-03-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T16:22:54+08:00">
+                2017-04-06
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -336,7 +336,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/03/30/shell-command/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/04/06/es6-module/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2017/03/30/shell-command/" class="leancloud_visitors" data-flag-title="简单的shell命令，装x使用">
+             <span id="/2017/04/06/es6-module/" class="leancloud_visitors" data-flag-title="es6 module 模块系统">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,15 +374,27 @@
       
 
       
-        <h4 id="文件目录管理"><a href="#文件目录管理" class="headerlink" title="文件目录管理"></a>文件目录管理</h4><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">ls: 列出目录</div><div class="line"></div><div class="line"><span class="built_in">cd</span>：切换目录</div><div class="line"></div><div class="line"><span class="built_in">pwd</span>：显示目前的目录</div><div class="line"></div><div class="line">mkdir：创建一个新的目录</div><div class="line"></div><div class="line">rmdir：删除一个空的目录</div><div class="line"></div><div class="line">cp: 复制文件或目录</div><div class="line"></div><div class="line">rm: 移除文件或目录</div><div class="line"></div><div class="line">rm -r: 强制删除文件或递归删除一个目录</div><div class="line"></div><div class="line">cat: 查看文件内容</div><div class="line"></div><div class="line">touch a.js: 新建一个a.js文件</div><div class="line"></div><div class="line">mv a.txt b.txt:文件a.txt重名名b.txt</div><div class="line"></div><div class="line">mv a.txt &lt;path&gt; : 把文件a移动到一个目录下，&lt;path&gt;是要移动的目录路径</div></pre></td></tr></table></figure>
-<h4 id="vi-vim-编辑器"><a href="#vi-vim-编辑器" class="headerlink" title="vi vim 编辑器"></a>vi vim 编辑器</h4><p>vim 可以看作是vi的升级版，兼容所有的vi命令，vim显示代码高亮，所以可以编辑查看代码文件，vi只适合纯文本编辑</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi/vim &lt;文件路径&gt;</div></pre></td></tr></table></figure>
-<p>这时候，打开的是一个命令模式，不能进行编辑</p>
-<h4 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入‘aoi’</div></pre></td></tr></table></figure>
-<p>这时候进入insert模式，才可以对文件增删改编辑</p>
-<h4 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">:q //直接退出</div><div class="line"></div><div class="line">:wq //保存退出</div><div class="line"></div><div class="line">:q! //强制退出</div></pre></td></tr></table></figure>
-<p>如果是在insert模式下，先安esc键，进入命令模式，在命令模式输入 : ,进入底部命令模式</p>
+        <p>任何一个应用的开发，代码模块化的概念都是应该注意的问题，对于这个概念，不同的语言都有自己的实现，然而javascript以前的历史一直没有提供这样的标准，所以社区制定了一些加载方案，比如<a id="more"></a>commonjs，amd。但是es6的发布重新定义了这一方案。</p>
+<h4 id="关于commonjs"><a href="#关于commonjs" class="headerlink" title="关于commonjs"></a>关于commonjs</h4><p>commonjs是javascript模块化的一个规范，node对它进行了实现。commonjs规定一个文件就是一个模块，并且每个文件有两个对象require和export。require用来接受模块输出的对象，export用来输出这个对象或者模块的方法变量等。require方法返回的是export对象。commonjs模块加载是同步加载。</p>
+<h4 id="关于AMD"><a href="#关于AMD" class="headerlink" title="关于AMD"></a>关于AMD</h4><p>AMD是一个异步加载的模块系统，它用define函数定义模块，模块的返回值又可以作为参数被依赖它的模块所使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// 定义模块a a.js</div><div class="line">define(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	//Do setup work here</div><div class="line">	...</div><div class="line">	<span class="built_in">return</span> &#123;</div><div class="line">        color: <span class="string">"black"</span>,</div><div class="line">        size: <span class="string">"unisize"</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">//定义模块b,b依赖a b.js </div><div class="line">define([‘./a’],<span class="keyword">function</span>(a)&#123;</div><div class="line">	//...</div><div class="line">	<span class="built_in">return</span> &#123;</div><div class="line">		Bcolor: <span class="string">"b"</span>,</div><div class="line">        Bsize: <span class="string">"b"</span></div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="es6模块系统"><a href="#es6模块系统" class="headerlink" title="es6模块系统"></a>es6模块系统</h4><p>es6的模块加载是在代码的静态编译阶段，不同于commonjs是运行阶段。JS 引擎对脚本静态分析的时候，遇到模块加载命令import，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</p>
+<p>es6模块主要有两个命令import和export，export规定模块对外的接口，import引用模块中export提供的对外接口。一个文件就是一个模块，文件内部的变量外部永远无法获取，它也没有顶层 作用域对象this。所有在模块内部不可以使用this对象。</p>
+<h5 id="export命令"><a href="#export命令" class="headerlink" title="export命令"></a>export命令</h5><p>export输出变量 ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// profile.js</div><div class="line"><span class="built_in">export</span> var firstName = <span class="string">'Michael'</span>;</div><div class="line"><span class="built_in">export</span> var lastName = <span class="string">'Jackson'</span>;</div><div class="line"><span class="built_in">export</span> var year = 1958;</div><div class="line"></div><div class="line">//等同于</div><div class="line">var firstName = <span class="string">'Michael'</span>;</div><div class="line">var lastName = <span class="string">'Jackson'</span>;</div><div class="line">var year = 1958;</div><div class="line"><span class="built_in">export</span> &#123;firstName,lastName, year&#125;;</div></pre></td></tr></table></figure>
+<p>建议使用第二种方法，因为这样可以直观的看到输出的内容，另外需要注意输出接口名，与上面真正的变量是一一对应的的关系</p>
+<p>export输出函数 类 ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// foo.js</div><div class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>()&#123;&#125; // <span class="built_in">export</span>对外输出一个函数foo</div></pre></td></tr></table></figure>
+<h5 id="import命令"><a href="#import命令" class="headerlink" title="import命令"></a>import命令</h5><p>export对外输出模块的接口之后，import用来加载这个模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 加载profile.js</div><div class="line">import &#123;firstName,lastName,year&#125; from <span class="string">'.profile'</span>;</div><div class="line"></div><div class="line">//为lastName变量改名</div><div class="line">import &#123; lastName as surname &#125; from <span class="string">'./profile'</span>;</div></pre></td></tr></table></figure>
+<p>import命令后面 跟一对大括号，里面指定从其它模块导入的变量名，这些变量名必须与export导出的接口名一样。as可以为导入的变量改名</p>
+<h6 id="模块的整体加载-："><a href="#模块的整体加载-：" class="headerlink" title="模块的整体加载 ："></a>模块的整体加载 ：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 定义模块circle.js</div><div class="line"></div><div class="line"><span class="built_in">export</span> <span class="keyword">function</span> area(radius) &#123;</div><div class="line">  <span class="built_in">return</span> Math.PI * radius * radius;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">export</span> <span class="keyword">function</span> circumference(radius) &#123;</div><div class="line">  <span class="built_in">return</span> 2 * Math.PI * radius;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//加载模块 circle.js</div><div class="line"></div><div class="line">impot &#123;area,circumfefenc&#125; from <span class="string">'circle'</span> //通过接口名依次加载</div><div class="line"></div><div class="line">import * as circle from <span class="string">'circle'</span> //通过* 整体加载作为一个对象赋予变量circle</div><div class="line">console.log(<span class="string">'圆面积：'</span> + circle.area(4));</div><div class="line">console.log(<span class="string">'圆周长：'</span> + circle.circumference(14));</div></pre></td></tr></table></figure>
+<h6 id="默认输出-export-default-："><a href="#默认输出-export-default-：" class="headerlink" title="默认输出  export default ："></a>默认输出  export default ：</h6><p>export default命令为模块指定默认输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// <span class="built_in">export</span>-default.js</div><div class="line"><span class="built_in">export</span> default <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">  console.log(<span class="string">'foo'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// import-default.js</div><div class="line">import customName from <span class="string">'./export-default'</span>;</div><div class="line">customName(); // <span class="string">'foo'</span></div></pre></td></tr></table></figure>
+<p>上面代码 模块默认输出一个函数，import引用时可以指定任意名，因为export default实质是输出一个变量名叫default的接口；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// modules.js</div><div class="line"><span class="keyword">function</span> add(x, y) &#123;</div><div class="line">  <span class="built_in">return</span> x * y;</div><div class="line">&#125;</div><div class="line"><span class="built_in">export</span> &#123;add as default&#125;;</div><div class="line">// 等同于</div><div class="line">// <span class="built_in">export</span> default add;</div><div class="line"></div><div class="line">// app.js</div><div class="line">import &#123; default as xxx &#125; from <span class="string">'modules'</span>;</div><div class="line">// 等同于</div><div class="line">// import xxx from <span class="string">'modules'</span>;</div></pre></td></tr></table></figure>
+<h6 id="export-default复合写法-："><a href="#export-default复合写法-：" class="headerlink" title="export default复合写法 ："></a>export default复合写法 ：</h6><p>如果在一个模块之中，先输入后输出同一个模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> &#123; foo, bar &#125; from <span class="string">'my_module'</span>;</div><div class="line"></div><div class="line">// 等同于</div><div class="line">import &#123; foo, bar &#125; from <span class="string">'my_module'</span>;</div><div class="line"><span class="built_in">export</span> &#123; foo, bar &#125;;</div></pre></td></tr></table></figure></p>
+<p>模块的接口改名和整体输出，也可以采用这种写法，如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 接口改名</div><div class="line"><span class="built_in">export</span> &#123; foo as myFoo &#125; from <span class="string">'my_module'</span>;</div><div class="line"></div><div class="line">// 整体输出</div><div class="line"><span class="built_in">export</span> * from <span class="string">'my_module'</span>;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -435,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/30/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/04/05/es6-class/" rel="next" title="es6 class 类">
+                <i class="fa fa-chevron-left"></i> es6 class 类
               </a>
             
           </div>
@@ -444,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/01/es6-yield/" rel="prev" title="es6 generator yield语句和next()方法">
-                es6 generator yield语句和next()方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件目录管理"><span class="nav-number">1.</span> <span class="nav-text">文件目录管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi-vim-编辑器"><span class="nav-number">2.</span> <span class="nav-text">vi vim 编辑器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑文件"><span class="nav-number">3.</span> <span class="nav-text">编辑文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#退出"><span class="nav-number">4.</span> <span class="nav-text">退出</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于commonjs"><span class="nav-number">1.</span> <span class="nav-text">关于commonjs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于AMD"><span class="nav-number">2.</span> <span class="nav-text">关于AMD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#es6模块系统"><span class="nav-number">3.</span> <span class="nav-text">es6模块系统</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#export命令"><span class="nav-number">3.1.</span> <span class="nav-text">export命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#import命令"><span class="nav-number">3.2.</span> <span class="nav-text">import命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#模块的整体加载-："><span class="nav-number">3.2.1.</span> <span class="nav-text">模块的整体加载 ：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#默认输出-export-default-："><span class="nav-number">3.2.2.</span> <span class="nav-text">默认输出  export default ：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#export-default复合写法-："><span class="nav-number">3.2.3.</span> <span class="nav-text">export default复合写法 ：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

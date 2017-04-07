@@ -87,19 +87,16 @@
 
 
 
-<meta name="description" content="解构es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作
-多变量赋值 :1234567// 传统var a = 1,	b = 2,	c = 3//es6var [a,b,c] = [1,2,3]">
+<meta name="description" content="解构es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6解构赋值和扩展运算符 rest运算符">
 <meta property="og:url" content="http://yoursite.com/2017/04/05/es6-rest/index.html">
 <meta property="og:site_name" content="有趣的前端技术博客">
-<meta property="og:description" content="解构es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作
-多变量赋值 :1234567// 传统var a = 1,	b = 2,	c = 3//es6var [a,b,c] = [1,2,3]">
-<meta property="og:updated_time" content="2017-04-05T09:30:09.000Z">
+<meta property="og:description" content="解构es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作">
+<meta property="og:updated_time" content="2017-04-07T02:26:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6解构赋值和扩展运算符 rest运算符">
-<meta name="twitter:description" content="解构es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作
-多变量赋值 :1234567// 传统var a = 1,	b = 2,	c = 3//es6var [a,b,c] = [1,2,3]">
+<meta name="twitter:description" content="解构es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作">
 
 
 
@@ -108,7 +105,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"Title":"http://example.com/"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -377,9 +374,7 @@
       
 
       
-        <h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><p>es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作</p>
-<p>多变量赋值 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 传统</div><div class="line">var a = 1,</div><div class="line">	b = 2,</div><div class="line">	c = 3</div><div class="line"></div><div class="line">//es6</div><div class="line">var [a,b,c] = [1,2,3]</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
+        <h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><p>es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作<br><a id="more"></a><br>多变量赋值 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 传统</div><div class="line">var a = 1,</div><div class="line">	b = 2,</div><div class="line">	c = 3</div><div class="line"></div><div class="line">//es6</div><div class="line">var [a,b,c] = [1,2,3]</div></pre></td></tr></table></figure></p>
 <p>数组解构 :</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [<span class="string">'string'</span>,<span class="string">'number'</span>,<span class="string">'boolean'</span>];</div><div class="line"></div><div class="line">var [str,num,bool] = arr;</div><div class="line"></div><div class="line">console.log(str) //string</div><div class="line">console.log(num) //number</div><div class="line">console.log(bool) //boolean</div></pre></td></tr></table></figure>
 <p>对象解构 :</p>
@@ -440,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/01/es6-async/" rel="next" title="async函数">
-                <i class="fa fa-chevron-left"></i> async函数
+              <a href="/2017/04/01/es6-async/" rel="next" title="es7 async函数">
+                <i class="fa fa-chevron-left"></i> es7 async函数
               </a>
             
           </div>
@@ -526,7 +521,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -551,26 +546,41 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhanglongfee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://example.com/" title="Title" target="_blank">Title</a>
-                </li>
-              
-            </ul>
-          </div>
         
 
         
