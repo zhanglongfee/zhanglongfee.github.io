@@ -369,12 +369,14 @@
 
       
         
-          
-            <p>通过下面代码可以看到 Promise是一个构造函数，它生成的实例拥有一个then方法接收两个函数为参数，相当于普通<strong>异步代码</strong>中的成功和失败回调函数。这两个回调函数是通过Promise构造函数的resolve和reject方法的调用来决定。</p>
-<p>Promise代表的是一个异步操作，维护其状态的变化，如果异步操作状态是从pending（进行中）变为 Resolved（已完成）；resovle函数执行，同时会将传入它的参数传递出去 ，供then方法中的成功回调函数接收。如果异步操作状态是从pending（进行中）变为 Rejected（失败），reject函数执行，同时会将错误参数传递出去 ，then方法或者catch方法的失败回调函数可以接收。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">let promise = new Promise(function(resolve, reject) &#123;</div><div class="line">  console.log(&apos;Promise&apos;);</div><div class="line">  resolve(&apos;Resolved.&apos;);</div><div class="line">  console.log(1234)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">promise.then(function(value) &#123;</div><div class="line">  console.log(value);</div><div class="line">&#125;,function()&#123;&#125;);</div><div class="line"></div><div class="line">console.log(&apos;Hi!&apos;);</div><div class="line"></div><div class="line">// Promise</div><div class="line">// 1234</div><div class="line">// Hi!</div><div class="line">// Resolved</div></pre></td></tr></table></figure>
-
-          
+          <p>通过下面代码可以看到 Promise是一个构造函数，它生成的实例拥有一个then方法接收两个函数为参数，相当于普通<strong>异步代码</strong>中的成功和失败回调函数。这两个回调函数是通过Promise构造函数的resolve和reject方法的调用来决定。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/20/es6-promise/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
