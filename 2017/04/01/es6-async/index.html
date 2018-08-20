@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/01/es6-async/index.html">
 <meta property="og:site_name" content="FEDevelopment技术博客">
 <meta property="og:description" content="async函数是es7将要添加的一个标准，用来实现异步编程方案，与generator函数相比它可以自动执行，不需要像generator函数需要自己去调用或者另外的执行器来执行，功能基本一样，只是async使用更优，所以也可以将async看作是generator的语法糖。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-07-14T07:39:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es7 async函数">
@@ -375,11 +376,11 @@
 
       
         <p>async函数是es7将要添加的一个标准，用来实现异步编程方案，与generator函数相比它可以自动执行，不需要像generator函数需要自己去调用或者另外的执行器来执行，功能基本一样，只是async使用更优，所以也可以将async看作是generator的语法糖。<a id="more"></a></p>
-<h3 id="用法-定义"><a href="#用法-定义" class="headerlink" title="用法 定义"></a>用法 定义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//函数申明</div><div class="line">async <span class="keyword">function</span> asyncfn(ms,value)&#123;</div><div class="line">	await <span class="built_in">set</span>Timefn(ms)</div><div class="line">	console.log(value);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//函数表达式</div><div class="line">sonst foo = async <span class="function"><span class="title">function</span></span>()&#123;&#125;</div><div class="line"></div><div class="line">//箭头函数</div><div class="line">const foo = async () =&gt; &#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="用法-定义"><a href="#用法-定义" class="headerlink" title="用法 定义"></a>用法 定义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//函数申明</span><br><span class="line">async <span class="keyword">function</span> asyncfn(ms,value)&#123;</span><br><span class="line">	await setTimefn(ms)</span><br><span class="line">	console.log(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//函数表达式</span><br><span class="line">sonst foo = async <span class="function"><span class="title">function</span></span>()&#123;&#125;</span><br><span class="line"></span><br><span class="line">//箭头函数</span><br><span class="line">const foo = async () =&gt; &#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>async函数内部执行是：<strong>调用async函数返回一个Promise对象，然后当遇到await时就先返回，等到await后面的异步操作完成，再去执行函数体后面的语句。await后面跟的也是Promise对象，</strong>如果不是Promise就会立即转为resolve的Promise对象。</p>
 <p>上面代码，执行async(1000,’hello’)，立即返回一个Promise对象，可以使用then()，then方法只有当函数中所有的异步执行完成才会执行（除非遇到return或者有报错）。然后函数内部执行时遇到await先返回，等到1s后setTimeout()执行完成，再去打印console。</p>
 <p>async函数内部return语句返回的值，会成为then方法回调函数的参数。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> async <span class="keyword">function</span> <span class="function"><span class="title">f</span></span>() &#123;</div><div class="line">  <span class="built_in">return</span> <span class="string">'hello world'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f().then(v =&gt; console.log(v))</div><div class="line">// <span class="string">"hello world"</span></div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> async <span class="keyword">function</span> <span class="function"><span class="title">f</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">'hello world'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f().<span class="keyword">then</span>(v =&gt; console.log(v))</span><br><span class="line">// <span class="string">"hello world"</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -524,7 +525,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -541,6 +542,15 @@
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
@@ -624,7 +634,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

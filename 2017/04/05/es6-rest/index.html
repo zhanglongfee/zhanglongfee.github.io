@@ -93,6 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/05/es6-rest/index.html">
 <meta property="og:site_name" content="FEDevelopment技术博客">
 <meta property="og:description" content="解构es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-04-07T02:26:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6解构赋值和扩展运算符 rest运算符">
@@ -374,15 +375,15 @@
       
 
       
-        <h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><p>es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作<br><a id="more"></a><br>多变量赋值 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 传统</div><div class="line">var a = 1,</div><div class="line">	b = 2,</div><div class="line">	c = 3</div><div class="line"></div><div class="line">//es6</div><div class="line">var [a,b,c] = [1,2,3]</div></pre></td></tr></table></figure></p>
+        <h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><p>es6的解构可以简化传统多个变量的赋值以及对象或数组的取值操作<br><a id="more"></a><br>多变量赋值 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 传统</span><br><span class="line">var a = 1,</span><br><span class="line">	b = 2,</span><br><span class="line">	c = 3</span><br><span class="line"></span><br><span class="line">//es6</span><br><span class="line">var [a,b,c] = [1,2,3]</span><br></pre></td></tr></table></figure></p>
 <p>数组解构 :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [<span class="string">'string'</span>,<span class="string">'number'</span>,<span class="string">'boolean'</span>];</div><div class="line"></div><div class="line">var [str,num,bool] = arr;</div><div class="line"></div><div class="line">console.log(str) //string</div><div class="line">console.log(num) //number</div><div class="line">console.log(bool) //boolean</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="string">'string'</span>,<span class="string">'number'</span>,<span class="string">'boolean'</span>];</span><br><span class="line"></span><br><span class="line">var [str,num,bool] = arr;</span><br><span class="line"></span><br><span class="line">console.log(str) //string</span><br><span class="line">console.log(num) //number</span><br><span class="line">console.log(bool) //boolean</span><br></pre></td></tr></table></figure>
 <p>对象解构 :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">	name: <span class="string">'chris'</span>,</div><div class="line">	sex: <span class="string">'male'</span>,</div><div class="line">	age: 26,</div><div class="line">	son: &#123;</div><div class="line">		sonname: <span class="string">'大熊'</span>,</div><div class="line">		sonsex: <span class="string">'male'</span>,</div><div class="line">		sonage: 1</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">var &#123;name, sex, age, son&#125; = obj;</div><div class="line">console.log(name + <span class="string">' '</span> + sex + <span class="string">' '</span> + age); //chris male 26</div><div class="line">console.log(son); // &#123; sonname: <span class="string">'大熊'</span>, sonsex: <span class="string">'male'</span>, sonage: 1 &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">	name: <span class="string">'chris'</span>,</span><br><span class="line">	sex: <span class="string">'male'</span>,</span><br><span class="line">	age: 26,</span><br><span class="line">	son: &#123;</span><br><span class="line">		sonname: <span class="string">'大熊'</span>,</span><br><span class="line">		sonsex: <span class="string">'male'</span>,</span><br><span class="line">		sonage: 1</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var &#123;name, sex, age, son&#125; = obj;</span><br><span class="line">console.log(name + <span class="string">' '</span> + sex + <span class="string">' '</span> + age); //chris male 26</span><br><span class="line">console.log(son); // &#123; sonname: <span class="string">'大熊'</span>, sonsex: <span class="string">'male'</span>, sonage: 1 &#125;</span><br></pre></td></tr></table></figure>
 <h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><p>扩展运算符用三个点号表示，功能是把数组或类数组对象展开成一系列用逗号隔开的值，一般可用于函数的调用传参</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var foo = <span class="keyword">function</span>(a, b, c) &#123;</div><div class="line">	console.log(a);</div><div class="line">	console.log(b);</div><div class="line">	console.log(c);</div><div class="line">&#125;</div><div class="line">var arr = [1, 2, 3];</div><div class="line">//传统写法</div><div class="line">foo(arr[0], arr[1], arr[2]);</div><div class="line"></div><div class="line">//使用扩展运算符</div><div class="line">foo(...arr);</div><div class="line">//1</div><div class="line">//2</div><div class="line">//3</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var foo = <span class="keyword">function</span>(a, b, c) &#123;</span><br><span class="line">	console.log(a);</span><br><span class="line">	console.log(b);</span><br><span class="line">	console.log(c);</span><br><span class="line">&#125;</span><br><span class="line">var arr = [1, 2, 3];</span><br><span class="line">//传统写法</span><br><span class="line">foo(arr[0], arr[1], arr[2]);</span><br><span class="line"></span><br><span class="line">//使用扩展运算符</span><br><span class="line">foo(...arr);</span><br><span class="line">//1</span><br><span class="line">//2</span><br><span class="line">//3</span><br></pre></td></tr></table></figure>
 <h4 id="rest运算符"><a href="#rest运算符" class="headerlink" title="rest运算符"></a>rest运算符</h4><p>rest运算符也是三个点号，功能与扩展运算符恰好相反，用于把逗号隔开的值序列组合成一个数组，一般用于函数的形参</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//rest用于参数接收</div><div class="line"></div><div class="line">bar = <span class="keyword">function</span>(a, ...args) &#123;</div><div class="line">	console.log(a);</div><div class="line">	console.log(args);</div><div class="line">&#125;</div><div class="line">bar(1, 2, 3, 4);</div><div class="line">//1</div><div class="line">//[ 2, 3, 4 ]</div><div class="line">``` </div><div class="line"></div><div class="line">rest运算符配合解构 :</div><div class="line"></div><div class="line">``` bash</div><div class="line">var [a, ...rest] = [1, 2, 3, 4];</div><div class="line">console.log(a);//1</div><div class="line">console.log(rest);//[2, 3, 4]</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//rest用于参数接收</span><br><span class="line"></span><br><span class="line">bar = <span class="keyword">function</span>(a, ...args) &#123;</span><br><span class="line">	console.log(a);</span><br><span class="line">	console.log(args);</span><br><span class="line">&#125;</span><br><span class="line">bar(1, 2, 3, 4);</span><br><span class="line">//1</span><br><span class="line">//[ 2, 3, 4 ]</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">rest运算符配合解构 :</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">var [a, ...rest] = [1, 2, 3, 4];</span><br><span class="line">console.log(a);//1</span><br><span class="line">console.log(rest);//[2, 3, 4]</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -527,7 +528,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -544,6 +545,15 @@
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
@@ -627,7 +637,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
