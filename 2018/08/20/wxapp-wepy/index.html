@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="FEDevelopment技术博客">
 <meta property="og:description" content="注册账号，创建小程序项目微信提供的小程序开发工具集成了项目打包，创建，代码压缩，发布等功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T08:31:00.195Z">
+<meta property="og:updated_time" content="2018-09-26T10:31:13.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序(wepy)">
 <meta name="twitter:description" content="注册账号，创建小程序项目微信提供的小程序开发工具集成了项目打包，创建，代码压缩，发布等功能。">
@@ -308,6 +308,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -371,7 +393,43 @@
 <p><strong> setData</strong><br>小程序中必须通过setData() 修改数据值，使用this.data直接赋值不能改变视图层状态</p>
 <p><strong> 路由导航</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigator open-type=&quot;navigateTo&quot;/&gt;</span><br><span class="line">wx.navigateTo</span><br></pre></td></tr></table></figure></p>
 <p><strong> 模块化 </strong><br>commonjs规范<br><strong> 自定义组件</strong><br>Component<br>组件传参，代码混入，slot分发（组件关系，抽象节点）</p>
-<p><strong> <a href="https://tencent.github.io/wepy/document.html#/" target="_blank" rel="noopener">wepy</a></strong></p>
+<h3 id="wepy"><a href="#wepy" class="headerlink" title=" wepy"></a><strong> <a href="https://tencent.github.io/wepy/document.html#/" target="_blank" rel="noopener">wepy</a></strong></h3><p>为什么使用wepy？ </p>
+<ul>
+<li>开发风格 接近于 Vue.js，支持组件 Props 传值，自定义事件、组件分布式复用Mixin、计算属性函数computed、模板内容分发slot等等。</li>
+<li>组件化开发，完美解决组件隔离，组件嵌套，组件通信等问题</li>
+<li>支持使用第三方 npm 资源，自动处理 npm 资源之间的依赖关系，完美兼容所有无平台依赖的 npm 资源包</li>
+<li>使用es2015 特性</li>
+<li>压缩后 24.3KB 即可拥有所有框架功能，额外增加 8.9 KB后即可使用 Promise 和 Async Function</li>
+<li>编译 插件等</li>
+</ul>
+<p><strong> 创建wepy项目 </strong> </p>
+<ol>
+<li><p>安装或更新WePY命令行工具.<br> <code>npm install wepy-cli -g</code></p>
+</li>
+<li><p>wepy init standard myproject</p>
+</li>
+<li><p>cd myproject</p>
+</li>
+<li><p>npm  install  wepy build –watch</p>
+</li>
+</ol>
+<p>** 添加项目 ，产看是否有<code>wepy build --watch</code> 配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;description&quot;: &quot;project description&quot;,</span><br><span class="line">  &quot;setting&quot;: &#123;</span><br><span class="line">    &quot;urlCheck&quot;: true,</span><br><span class="line">    &quot;es6&quot;: false,</span><br><span class="line">    &quot;postcss&quot;: false,</span><br><span class="line">    &quot;minified&quot;: false</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;compileType&quot;: &quot;miniprogram&quot;,</span><br><span class="line">  &quot;appid&quot;: &quot;touristappid&quot;,</span><br><span class="line">  &quot;projectname&quot;: &quot;Project name&quot;,</span><br><span class="line">  &quot;miniprogramRoot&quot;: &quot;./dist&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 代码规范 </strong> </p>
+<ol>
+<li>变量与方法尽量使用驼峰式命名，并且注意避免使用$开头。 以$开头的标识符为WePY框架的内建属性和方法，可在JavaScript脚本中以this.的方式直接使用</li>
+<li>事件绑定语法使用优化语法代替<ul>
+<li>原 bindtap=”click” 替换为 @tap=”click”，原catchtap=”click”替换为@tap.stop=”click”</li>
+</ul>
+</li>
+<li>事件传参使用优化后语法代替。 原bindtap=”click” data-index=替换为@tap=”click()”。</li>
+<li>自定义组件命名应避开微信原生组件名称以及功能标签<repeat>。 不可以使用input、button、view、repeat等微信小程序原生组件名称命名自定义组件；另外也不要使用WePY框架定义的辅助标签repeat命名</repeat></li>
+</ol>
+<p><strong> 单文件组件目录结构 对比</strong><br>原生小程序要求app实例必须有3个文件：app.js、app.json、app.wxss，而page页面则一般有4个文件：page.js、page.json、page.wxml、page.wxss，并且还要求app实例的3个文件以及page页面的4个文件除后缀名外必须同名<br>而在WePY中则使用了单文件模式，将原生小程序app实例的3个文件统一为app.wpy，page页面的4个文件统一为page.wpy。使用WePY开发前后的开发目录结构对比如下：</p>
+<p>原生目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">project</span><br><span class="line">├── pages</span><br><span class="line">|   ├── index</span><br><span class="line">|   |   ├── index.js    index 页面逻辑</span><br><span class="line">|   |   ├── index.json  index 页面配置</span><br><span class="line">|   |   ├── index.wxml  index 页面结构</span><br><span class="line">|   |   └── index.wxss  index 页面样式</span><br><span class="line">|   └── log</span><br><span class="line">|       ├── log.js      log 页面逻辑</span><br><span class="line">|       ├── log.json    log 页面配置</span><br><span class="line">|       ├── log.wxml    log 页面结构</span><br><span class="line">|       └── log.wxss    log 页面样式</span><br><span class="line">├── app.js              小程序逻辑</span><br><span class="line">├── app.json            小程序公共配置</span><br><span class="line">└── app.wxss            小程序公共样式</span><br></pre></td></tr></table></figure></p>
+<p>wepy框架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">project</span><br><span class="line">└── src</span><br><span class="line">    ├── pages</span><br><span class="line">    |   ├── index.wpy    index 页面逻辑、配置、结构、样式</span><br><span class="line">    |   └── log.wpy      log 页面逻辑、配置、结构、样式</span><br><span class="line">    └──app.wpy           小程序逻辑、公共配置、公共样式</span><br></pre></td></tr></table></figure></p>
+<p><strong> 组件化 </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">// index.wpy</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view&gt;</span><br><span class="line">        &lt;panel&gt;</span><br><span class="line">            &lt;h1 slot=&quot;title&quot;&gt;&lt;/h1&gt;</span><br><span class="line">        &lt;/panel&gt;</span><br><span class="line">        &lt;counter1 :num=&quot;myNum&quot;&gt;&lt;/counter1&gt;</span><br><span class="line">        &lt;counter2 :num.sync=&quot;syncNum&quot;&gt;&lt;/counter2&gt;</span><br><span class="line">        &lt;list :item=&quot;items&quot;&gt;&lt;/list&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import wepy from &apos;wepy&apos;;</span><br><span class="line">//引入List、Panel和Counter组件</span><br><span class="line">import List from &apos;../components/list&apos;;</span><br><span class="line">import Panel from &apos;../components/panel&apos;;</span><br><span class="line">import Counter from &apos;../components/counter&apos;;</span><br><span class="line"></span><br><span class="line">export default class Index extends wepy.page &#123;</span><br><span class="line">    //页面配置</span><br><span class="line">    config = &#123;</span><br><span class="line">        &quot;navigationBarTitleText&quot;: &quot;test&quot;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    //声明页面中将要使用到的组件</span><br><span class="line">    components = &#123;</span><br><span class="line">        panel: Panel,</span><br><span class="line">        counter1: Counter,</span><br><span class="line">        counter2: Counter,</span><br><span class="line">        list: List</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    //可用于页面模板中绑定的数据</span><br><span class="line">    data = &#123;</span><br><span class="line">        myNum: 50,</span><br><span class="line">        syncNum: 100,</span><br><span class="line">        items: [1, 2, 3, 4]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong> promise、async/await 特性</strong><br>针对原生API promise 封装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import wepy from &apos;wepy&apos;;</span><br><span class="line"></span><br><span class="line">export default class Index extends wepy.page &#123;</span><br><span class="line">    getData() &#123;</span><br><span class="line">        return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">            setTimeout(() =&gt; &#123;</span><br><span class="line">                resolve(&#123;data: 123&#125;);</span><br><span class="line">            &#125;, 3000);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    async onLoad() &#123;</span><br><span class="line">        let data = await this.getData();</span><br><span class="line">        console.log(data.data);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -493,8 +551,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -585,6 +652,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#wepy"><span class="nav-number">1.</span> <span class="nav-text"> wepy</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
